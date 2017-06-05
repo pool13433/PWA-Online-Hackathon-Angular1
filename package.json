@@ -1,0 +1,25 @@
+{
+  "name": "PWA-Online-Hackathon-Angular1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pool13433/PWA-Online-Hackathon-Angular1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pool13433/PWA-Online-Hackathon-Angular1/issues"
+  },
+  "homepage": "https://github.com/pool13433/PWA-Online-Hackathon-Angular1#readme",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "firebase": "^4.1.1",
+    "materialize-css": "^0.98.2"
+  }
+}
