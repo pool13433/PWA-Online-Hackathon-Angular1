@@ -2,6 +2,8 @@ app.controller('IndexController', function($scope, $window, FirebaseService) {
     var vm = this;
     vm.profileList = [];
     vm.form = {};
+    
+    FirebaseService.init();
 
     var refProfile = firebase.database().ref().child('/profile');
 
