@@ -1,7 +1,7 @@
 app.service('FirebaseService', FirebaseService);
 
 function FirebaseService() {
-    function FirebaseService() {
+    this.init = function () {
         // Initialize Firebase
         var config = {
             apiKey: "AIzaSyBzbDBZl1Ii0D79Y-Oghqh20GF4tMmwm80",
@@ -13,5 +13,4 @@ function FirebaseService() {
         };
         firebase.initializeApp(config);
     }
-    return FirebaseService();
 };
