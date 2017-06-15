@@ -3,6 +3,13 @@ app.controller('IndexController', function($scope, $window, FirebaseService) {
     vm.profileList = [];
     vm.form = {};
 
+
+		// Trigger photo take
+		//document.getElementById("snap").addEventListener("click", function() {
+		//	context.drawImage(video, 0, 0, 120, 120);
+		//	var dataURL = canvas.toDataURL('image/png');
+
+
     var refProfile = firebase.database().ref().child('/profile');
 
     refProfile.orderByKey().on("value", function(snapshot) {
@@ -22,13 +29,16 @@ app.controller('IndexController', function($scope, $window, FirebaseService) {
 
     vm.save = function() {
         if (vm.form.id == undefined || vm.form.id == '') {
+			vm.form.image = document.getElementById('canvas').toDataURL('image/png');
             refProfile.push(vm.form);
         } else {
             var updates = {};
+			vm.form.image = document.getElementById('canvas').toDataURL('image/png');
             updates['/' + vm.form.id] = {
                 name: vm.form.name,
                 age: vm.form.age,
-                status: vm.form.status
+                status: vm.form.status,
+				image: vm.form.image
             };
             console.log('updates ::==', updates);
             refProfile.update(updates);
@@ -46,5 +56,9 @@ app.controller('IndexController', function($scope, $window, FirebaseService) {
         }
         return false;
     }
+
+	vm.capture = function() {
+		document.getElementById('canvas').getContext('2d').drawImage(video, 0, 0, 120, 120);
+	}
 
 });
